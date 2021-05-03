@@ -1,0 +1,123 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: 'cascadia code', sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(0, 180, 252), rgb(180, 252, 252));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.horloge {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.horloge .nombre {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+.horloge .nombre1 {
+    --rotation: 30deg
+}
+
+.horloge .nombre2 {
+    --rotation: 60deg
+}
+
+.horloge .nombre3 {
+    --rotation: 90deg
+}
+
+.horloge .nombre4 {
+    --rotation: 120deg
+}
+
+.horloge .nombre5 {
+    --rotation: 150deg
+}
+
+.horloge .nombre6 {
+    --rotation: 180deg;
+}
+
+.horloge .nombre7 {
+    --rotation: 210deg
+}
+
+.horloge .nombre8 {
+    --rotation: 240deg
+}
+
+.horloge .nombre9 {
+    --rotation: 270deg
+}
+
+.horloge .nombre10 {
+    --rotation: 300deg
+}
+
+.horloge .nombre11 {
+    --rotation: 330deg
+}
+
+.horloge .fleche {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    border: 1px solide white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg))
+}
+
+.horloge::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.horloge .fleche.Seconde {
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.horloge .fleche.Minute {
+    width: 7px;
+    height: 43%;
+    background-color: black;
+}
+
+.horloge .fleche.Heure {
+    width: 10px;
+    height: 40%;
+    background-color: black;
+}
